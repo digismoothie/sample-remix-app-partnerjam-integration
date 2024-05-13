@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "cd0f03c47e6acfbcb5793892598f2418"
+name = "partnerjam-example-app"
+handle = "partnerjam-example-app"
+application_url = "https://largest-requested-banners-bill.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "dev-123456789.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://largest-requested-banners-bill.trycloudflare.com/auth/callback",
+  "https://largest-requested-banners-bill.trycloudflare.com/auth/shopify/callback",
+  "https://largest-requested-banners-bill.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false
