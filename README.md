@@ -68,9 +68,9 @@ For the attribution you can call the PJ Init function from the window object.
 
 ## Subscription discount
 
-⚠️ To get the value of the discount, you must first make the [[attribution described above]](#Attribution). You can make sure that attribution was finished by subscribing to `onComplete ` callback
+⚠️ To get the value of the discount, you must first make the [attribution described above](#Attribution). You can make sure that attribution was finished by subscribing to `onComplete ` callback.
 
-If we provide an discount for new users comming from PartnerJam we have to send request to PartnerJam with myshopify domain and our APP_ID.
+If we provide a discount for new users comming from PartnerJam we have to send request to PartnerJam with myshopify domain and our APP_ID.
 
 This request return amount of discount if myshopify domain with APP_ID exists in PartnerJam database.
 
