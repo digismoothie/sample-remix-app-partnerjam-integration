@@ -28,11 +28,11 @@ For app attribution we have put a code snippet to root.tsx file with APP_ID para
     s.async=true;s.charset='utf-8';s.type='text/javascript';
     s.onload=function(){PJ.init(o)};s.src=sc;h.appendChild(s);
     })(document, {
-      debug: true,
       appId: 123456789, // <-- Shopify APP_ID (REQUIRED)
+      debug: true,
       onComplete: function() {
         console.log("onComplete");
-      },
+      }
   });
 `}}/>
 ```
@@ -42,7 +42,7 @@ For app attribution we have put a code snippet to root.tsx file with APP_ID para
 | KEY        | REQUIRED | TYPE     |  DESCRIPTION                             |
 |------------|----------|----------|------------------------------------------|
 | appId      | required | INT      | Shopify App ID                           | 
-| debug      | optional | BOOLEN   | enables debugging messages to JS console |
+| debug      | optional | BOOLEAN   | enables debugging messages to JS console |
 | onComplete | optional | FUNCTION | Called when attribution was finished     | 
 
 
