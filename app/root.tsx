@@ -25,12 +25,14 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <script type="application/javascript" dangerouslySetInnerHTML={{__html: `
-          (function(d,k,u) {
+          (function(d,o) {
             var sc="https://cdn.partnerjam.com/sdk/pj.umd.js",
-            h=d.getElementsByTagName('head')[0],s=d.createElement('script');
-            s.async=true;s.charset='utf-8';s.type='text/javascript';
-            s.onload=function(){PJ.init(k,u)};s.src=sc;h.appendChild(s);
-          })(document, 123456789); // <-- Shopify APP_ID
+              h=d.getElementsByTagName('head')[0],s=d.createElement('script');
+              s.async=true;s.charset='utf-8';s.type='text/javascript';
+              s.onload=function(){PJ.init(o)};s.src=sc;h.appendChild(s);
+              })(document, {
+                appId: 123456789, // <-- Shopify APP_ID (REQUIRED)
+          });
         `}}/>
       </body>
     </html>

@@ -8,18 +8,49 @@ For app attribution we have put a code snippet to root.tsx file with APP_ID para
 
 ```jsx
 <script type="application/javascript" dangerouslySetInnerHTML={{__html: `
-  (function(d,k,u) {
+  (function(d,o) {
     var sc="https://cdn.partnerjam.com/sdk/pj.umd.js",
     h=d.getElementsByTagName('head')[0],s=d.createElement('script');
     s.async=true;s.charset='utf-8';s.type='text/javascript';
-    s.onload=function(){PJ.init(k,u)};s.src=sc;h.appendChild(s);
-  })(document, 123456789); // <-- Shopify APP_ID
+    s.onload=function(){PJ.init(o)};s.src=sc;h.appendChild(s);
+    })(document, {
+      appId: 123456789, // <-- Shopify APP_ID (REQUIRED)
+  });
 `}}/>
 ```
+
+### Example of all options
+```jsx
+<script type="application/javascript" dangerouslySetInnerHTML={{__html: `
+  (function(d,o) {
+    var sc="https://cdn.partnerjam.com/sdk/pj.umd.js",
+    h=d.getElementsByTagName('head')[0],s=d.createElement('script');
+    s.async=true;s.charset='utf-8';s.type='text/javascript';
+    s.onload=function(){PJ.init(o)};s.src=sc;h.appendChild(s);
+    })(document, {
+      debug: true,
+      appId: 123456789, // <-- Shopify APP_ID (REQUIRED)
+      onComplete: function() {
+        console.log("onComplete");
+      },
+  });
+`}}/>
+```
+
+### Options
+
+| KEY        | REQUIRED | TYPE     |
+|------------|----------|----------|
+| appId      | required | INT      |
+| debug      | optional | BOOLEN   |
+| onComplete | optional | FUNCTION |
+
 
 When a client opens our application, this snippet creates a browser fingerprint and automatically sends it to PartnerJam with the myshopify domain.
 
 ## Subscription discount
+
+⚠️ To get the value of the discount, you must first make the assignment described above. [[Attribution]](#Attribution)
 
 If we provide an discount for new users comming from PartnerJam we have to send request to PartnerJam with myshopify doamin and our APP_ID.
 
